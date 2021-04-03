@@ -4,6 +4,7 @@ const ejs = require('ejs')
 const GetController = require('./controllers/GetController')
 const PostController = require('./controllers/PostController')
 const DeleteController = require('./controllers/DeleteController')
+const FilterController = require('./controllers/FilterController')
 
 require('dotenv').config()
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({
 app.set("view engine", "ejs")
 
 app.get('/', GetController)
+app.get('/filter', FilterController)
 app.get('/delete/:id', DeleteController)
 
 app.post('/', PostController)

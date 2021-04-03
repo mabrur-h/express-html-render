@@ -9,11 +9,12 @@ const PostController = (req, res) => {
             errors.length = 0;
             errors.push("This user is already exists!");
         } else {
+            const length = users.length === 0 ? 0 : users[users.length - 1].id;
             users.push({
-                id: users.length + 1,
+                id: length + 1,
                 name,
                 date,
-                delete: `/delete/${users.length + 1}`
+                delete: `/delete/${length + 1}`
             });
         }
     } else {
