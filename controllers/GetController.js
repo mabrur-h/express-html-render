@@ -1,9 +1,11 @@
 const { users } = require('../data/users')
+const { errors } = require('../data/errors')
 
 const GetController = (req, res) => {
     res.render("index", {
-        users: users
+        users,
+        errors
     })
 }
 
-module.exports = GetController
+module.exports = GetController;

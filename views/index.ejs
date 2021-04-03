@@ -8,8 +8,18 @@
     <title>Express js</title>
 </head>
 <body>
+    <% if(errors[0]) { %>
+        <h1><%=errors[0]%></h1>
+    <% } else { %>
+        <span>''</span>
+            <% } %>
     <% for(let user of users) { %>
-    <h1><%= user %></h1>
+    <div>
+        <h1><%= user.name %></h1>
+        <h3><%= user.date %></h3>
+        <h5><%= user.id %></h5>
+        <a href="<%= user.delete %>">Delete</a>
+    </div>
     <% } %>
 </body>
 </html>

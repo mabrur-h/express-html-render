@@ -2,6 +2,8 @@ const express = require('express')
 const ejs = require('ejs')
 
 const GetController = require('./controllers/GetController')
+const PostController = require('./controllers/PostController')
+const DeleteController = require('./controllers/DeleteController')
 
 require('dotenv').config()
 
@@ -15,6 +17,9 @@ app.use(express.urlencoded({
 app.set("view engine", "ejs")
 
 app.get('/', GetController)
+app.get('/delete/:id', DeleteController)
+
+app.post('/', PostController)
 
 const PORT = process.env.PORT
 
